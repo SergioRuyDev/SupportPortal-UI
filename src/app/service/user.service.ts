@@ -3,7 +3,7 @@ import { HttpClient, HttpResponse, HttpErrorResponse, HttpEvent } from '@angular
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
-import { CustomHttpRespone } from '../model/custom-http-response';
+import { CustomHttpResponse } from '../model/custom-http-response';
 
 @Injectable({providedIn: 'root'})
 export class UserService {
@@ -23,8 +23,8 @@ export class UserService {
     return this.http.put<User>(`${this.host}/user/update`, formData);
   }
 
-  public resetPassword(email: string): Observable<CustomHttpRespone> {
-    return this.http.get<CustomHttpRespone>(`${this.host}/user/resetpassword/${email}`);
+  public resetPassword(email: string): Observable<CustomHttpResponse> {
+    return this.http.get<CustomHttpResponse>(`${this.host}/user/resetpassword/${email}`);
   }
 
   public updateProfileImage(formData: FormData): Observable<HttpEvent<User>> {
@@ -34,8 +34,8 @@ export class UserService {
       });
   }
 
-  public deleteUser(username: string): Observable<CustomHttpRespone> {
-    return this.http.delete<CustomHttpRespone>(`${this.host}/user/delete/${username}`);
+  public deleteUser(username: string): Observable<CustomHttpResponse> {
+    return this.http.delete<CustomHttpResponse>(`${this.host}/user/delete/${username}`);
   }
 
   public addUsersToLocalCache(users: User[]): void {
