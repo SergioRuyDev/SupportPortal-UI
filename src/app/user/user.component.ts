@@ -6,7 +6,7 @@ import { NotificationService } from '../service/notification.service';
 import { NotificationType } from '../enum/notification-type.enum';
 import { HttpErrorResponse, HttpEvent, HttpEventType } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { CustomHttpRespone } from '../model/custom-http-response';
+import { CustomHttpResponse } from '../model/custom-http-response';
 import { AuthenticationService } from '../service/authentication.service';
 import { Router } from '@angular/router';
 import { FileUploadStatus } from '../model/file-upload.status';
@@ -192,7 +192,7 @@ export class UserComponent implements OnInit, OnDestroy {
     const emailAddress = emailForm.value['reset-password-email'];
     this.subscriptions.push(
       this.userService.resetPassword(emailAddress).subscribe(
-        (response: CustomHttpRespone) => {
+        (response: CustomHttpResponse) => {
           this.sendNotification(NotificationType.SUCCESS, response.message);
           this.refreshing = false;
         },
@@ -208,7 +208,7 @@ export class UserComponent implements OnInit, OnDestroy {
   public onDeleteUder(username: string): void {
     this.subscriptions.push(
       this.userService.deleteUser(username).subscribe(
-        (response: CustomHttpRespone) => {
+        (response: CustomHttpResponse) => {
           this.sendNotification(NotificationType.SUCCESS, response.message);
           this.getUsers(false);
         },
