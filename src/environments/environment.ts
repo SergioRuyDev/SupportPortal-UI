@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://ruydev.us-east-2.elasticbeanstalk.com'
+  apiUrl: 'https://support-portal-sergio.herokuapp.com/'
 };
 /*
  * For easier debugging in development mode, you can import the following file

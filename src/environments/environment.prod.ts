@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://ruydev.us-east-2.elasticbeanstalk.com'
+  apiUrl: 'https://support-portal-sergio.herokuapp.com/'
 };
